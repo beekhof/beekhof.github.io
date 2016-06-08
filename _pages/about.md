@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: archive
 title: About
 permalink: /about/
 image:
@@ -7,6 +7,8 @@ image:
   credit: Andrew Beekhof (2013)
 ---
 
-Nearly a decade after starting [Pacemaker](http://clusterlabs.org) at SUSE, Andrew is currently based in Melbourne, still working on it and other cluster-related projects for [Red Hat](http://redhat.com)
+{% include base_path %}
 
-<!--a markdown="0" href="{{ site.url }}/theme-setup" class="btn">Install Minimal Mistakes Theme</a-->
+Nearly a decade after starting [Pacemaker](http://clusterlabs.org) at
+SUSE, Andrew is currently based in Melbourne, still working on it and
+other cluster-related projects for [Red Hat](http://redhat.com)
