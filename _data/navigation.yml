@@ -6,10 +6,10 @@ main:
   - title: "About"
     url: /about/
 
-  - title: "Posts"
+  - title: "By Year"
     url: /year-archive/
 
-  - title: "Tags"
+  - title: "By Tag"
     url: /tags/
 
   - title: "Sitemap"
