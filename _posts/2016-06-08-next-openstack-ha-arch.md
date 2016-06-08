@@ -1,5 +1,5 @@
 ---
-date: 2016-06-08 14:06
+date: 2016-06-07 14:06
 title: Evolving the OpenStack HA Architecture
 excerpt: A future revision of the HA architecture should limit Pacemaker involvement to services like Galera, Rabbit and the few remaining OpenStack services that can only run active/passive.
 tags: 
