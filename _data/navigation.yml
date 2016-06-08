@@ -12,8 +12,10 @@ main:
   - title: "Tags"
     url: /tags/
 
-  - title: "Collections"
-    url: /collection-archive/
-
   - title: "Sitemap"
-    url: /sitemap/    
+    url: /sitemap/
+
+#  - title: "Collections"
+#    url: /collection-archive/
+
+    
