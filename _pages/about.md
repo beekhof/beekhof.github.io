@@ -1,10 +1,9 @@
 ---
-layout: post
+layout: single
 title: About
 permalink: /about/
-image:
-  feature: beach-banner.png
-  credit: Andrew Beekhof (2013)
+header:
+  image: beach-banner.png
 ---
 
 {% include base_path %}
