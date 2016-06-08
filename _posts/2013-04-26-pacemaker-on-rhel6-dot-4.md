@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Pacemaker on RHEL6.4"
 date: 2013-05-04 8:09
 comments: true

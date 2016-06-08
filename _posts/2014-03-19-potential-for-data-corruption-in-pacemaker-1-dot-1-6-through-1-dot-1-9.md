@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Potential for data corruption affecting Pacemaker 1.1.6 through 1.1.9"
 date: 2014-03-19 13:24
 comments: true

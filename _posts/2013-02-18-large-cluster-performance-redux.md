@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Large Cluster Performance: Redux"
 date: 2013-02-18 10:49
 comments: true

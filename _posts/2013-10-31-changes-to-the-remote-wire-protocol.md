@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Changes to the Remote Wire Protocol in 1.1.11"
 date: 2013-10-31 12:04
 comments: true

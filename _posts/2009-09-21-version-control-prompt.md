@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: Version Control Prompt
 tags:
 - tips

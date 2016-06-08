@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: Pacemaker 1.0.9 Released
 tags:
 - announce

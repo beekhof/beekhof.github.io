@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: Large Cluster Performance
 tags: 
 - performance

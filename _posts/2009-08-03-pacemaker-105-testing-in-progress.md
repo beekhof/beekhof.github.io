@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: ! 'Pacemaker 1.0.5: Testing In Progress'
 tags: 
 ---

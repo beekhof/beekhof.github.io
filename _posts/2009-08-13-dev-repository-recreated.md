@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: ! 'Dev Repository Recreated '
 tags:
 - announce

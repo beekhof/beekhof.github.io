@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Pacemaker and RHEL 6.4 (redux)"
 date: 2013-11-04 09:33
 comments: true

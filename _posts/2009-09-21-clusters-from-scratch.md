@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: Clusters From Scratch
 tags:
 - announce

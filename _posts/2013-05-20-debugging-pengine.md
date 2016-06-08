@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Debugging the Policy Engine"
 date: 2013-05-20 11:49
 comments: true

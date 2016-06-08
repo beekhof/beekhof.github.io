@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: Pacemaker, Heartbeat, Corosync, WTF?
 tags: 
 ---

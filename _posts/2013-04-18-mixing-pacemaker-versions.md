@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Mixing Pacemaker versions"
 date: 2013-04-19 9:47
 comments: true

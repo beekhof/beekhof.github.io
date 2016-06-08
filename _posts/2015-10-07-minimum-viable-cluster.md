@@ -1,5 +1,5 @@
 ---
-layout: post
+
 date: 2015-10-07 16:51
 title: Minimum Viable Cluster
 published: true

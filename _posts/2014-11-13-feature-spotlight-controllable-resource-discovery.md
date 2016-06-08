@@ -1,5 +1,5 @@
 ---
-layout: post
+
 date: 2014-11-13 13:09
 title: Feature Spotlight - Controllable Resource Discovery
 tags: [Feature Spotlight]

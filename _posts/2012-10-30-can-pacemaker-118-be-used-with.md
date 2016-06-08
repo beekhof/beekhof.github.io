@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: Can Pacemaker 1.1.8 be used with...
 tags: 
 ---

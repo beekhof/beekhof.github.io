@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: Pacemaker ships as part of Ubuntu 10.4 - Lucid Lynx
 tags: 
 ---

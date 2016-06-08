@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: ! 'Pre-Announce: End of Pacemaker 0.6 support is near'
 tags: 
 ---

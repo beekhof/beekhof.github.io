@@ -1,5 +1,5 @@
 ---
-layout: post
+
 date: 2015-05-13 9:21
 title: Adding Managed Compute Nodes to a Highly Available Openstack Control Plane
 tags: 

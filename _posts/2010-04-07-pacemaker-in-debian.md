@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: Pacemaker in Debian
 tags: 
 ---

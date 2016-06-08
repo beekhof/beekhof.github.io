@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: Highly Available Data Corruption
 tags:
 ---

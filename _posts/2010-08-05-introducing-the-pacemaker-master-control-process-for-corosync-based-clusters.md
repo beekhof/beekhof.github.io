@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: Introducing the Pacemaker Master Control Process for Corosync-based Clusters
 tags: 
 ---

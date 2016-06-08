@@ -1,5 +1,5 @@
 ---
-layout: post
+
 date: 2014-11-14 21:17
 title: Feature Spotlight - Smart Resource Restart from the Command Line
 excerpt: Anatomy of resource restart

@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: Pacemaker 1.1.7 Now Available
 tags: 
 ---

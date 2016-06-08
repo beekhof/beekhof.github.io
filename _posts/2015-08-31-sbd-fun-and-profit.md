@@ -1,5 +1,5 @@
 ---
-layout: post
+
 date: 2015-08-31 16:51
 title: Fencing for Fun and Profit with SBD
 published: true

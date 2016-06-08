@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "GPG Quickstart"
 date: 2013-06-24 14:40
 comments: true

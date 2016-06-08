@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: New Pacemaker Packages
 tags: 
 ---

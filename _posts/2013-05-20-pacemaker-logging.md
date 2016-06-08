@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Pacemaker Logging"
 date: 2013-05-20 13:43
 comments: true

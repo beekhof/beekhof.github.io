@@ -1,5 +1,5 @@
 ---
-layout: post
+
 date: 2015-05-28 12:50
 title: Life at the Intersection of Pets and Cattle
 published: true

@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: A Brief, Incomplete, and Mostly Wrong History of Programming Languages
 tags:
 - humor

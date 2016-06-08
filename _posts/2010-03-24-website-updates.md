@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: Website Updates
 tags: 
 - Site News

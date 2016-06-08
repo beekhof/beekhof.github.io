@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: Configuring Heartbeat v1 Was So Simple
 tags:
 - tips

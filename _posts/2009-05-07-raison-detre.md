@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: raison d'etre
 tags:
 - general

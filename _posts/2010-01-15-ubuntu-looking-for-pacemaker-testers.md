@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: Ubuntu looking for Pacemaker testers
 tags: 
 ---

@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: ! 'Advisory: Don''t use Pacemaker on Corosync (yet)'
 tags:
 - announce

@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Pacemaker 1.1.10 - final"
 date: 2013-07-26 10:11
 comments: true

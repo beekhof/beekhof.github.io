@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: ! 'Feature Spotlight: Utilization'
 tags:
 - tips

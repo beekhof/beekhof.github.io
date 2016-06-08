@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: New Pacemaker Release Series
 tags:
 - announce

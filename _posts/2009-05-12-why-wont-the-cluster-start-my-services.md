@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: Why Wont the Cluster Start my Services?
 tags:
 - tips

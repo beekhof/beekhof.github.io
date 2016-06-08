@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: Pacemaker removed from OBS
 tags:
 - announce

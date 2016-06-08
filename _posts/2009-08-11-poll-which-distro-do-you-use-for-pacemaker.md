@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: ! 'Poll: Which Distro do you use for Pacemaker?'
 tags: 
 ---

@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Announcing 1.1.11 Beta Testing"
 date: 2013-11-21 14:00
 comments: true

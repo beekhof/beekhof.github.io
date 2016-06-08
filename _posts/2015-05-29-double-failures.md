@@ -1,5 +1,5 @@
 ---
-layout: post
+
 date: 2015-05-29 13:34
 title: Double Failure - Get out of Jail Free? Not so Fast
 published: true

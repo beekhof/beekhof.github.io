@@ -1,5 +1,5 @@
 ---
-layout: post
+
 date: 2015-09-01 12:16
 title: Receiving Reliable Notification of Cluster Events
 published: true

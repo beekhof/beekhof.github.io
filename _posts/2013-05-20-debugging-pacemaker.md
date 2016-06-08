@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Debugging Pacemaker"
 date: 2013-05-20 09:08
 comments: true

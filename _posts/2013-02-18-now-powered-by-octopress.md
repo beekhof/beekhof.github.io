@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Now powered by Octopress"
 date: 2013-02-18 13:48
 comments: true

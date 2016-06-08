@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Release candidate: 1.1.10-rc3"
 date: 2013-05-23 10:32
 comments: true

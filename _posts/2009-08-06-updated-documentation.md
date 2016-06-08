@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: Updated Documentation
 tags: 
 - documentation

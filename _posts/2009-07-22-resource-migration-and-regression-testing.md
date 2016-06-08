@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: Resource Migration and Regression Testing
 tags:
 - internals
