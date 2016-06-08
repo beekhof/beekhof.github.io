@@ -10,7 +10,7 @@ locale                   : "en-US"
 title                    : "That Cluster Guy"
 title_separator          : "-"
 name                     : "Andrew Beekhof"
-description              : "A website."
+description              : "A thing I do."
 url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 gh_repo                  :

@@ -3,15 +3,13 @@ layout: post
 date: 2016-06-08 14:06
 title: Evolving the OpenStack HA Architecture
 published: true
-excerpt: A future revision of the HA architecture should limit Pacemaker's involvement to services like Galera, Rabbit and the few remaining OpenStack services that can only run active/passive
+excerpt: A future revision of the HA architecture should limit Pacemaker involvement to services like Galera, Rabbit and the few remaining OpenStack services that can only run active/passive.
 category:
 tags: 
 - cluster
 - concepts
 - openstack
 ---
-
-## Removing Dependancies
 
 In the current OpenStack HA architecture used by Red Hat, SuSE and
 others, Systemd is the entity in charge of starting and stopping most
@@ -101,9 +99,6 @@ bootstrapped on the passive node, which implies increased downtime.
 So at the point the service becomes smart enough to run in an
 unconstrained A/A configuration, you are better off to do so - with or
 without a cluster manager.
-
-
-
 
 1. Watchdog-like functionality is only a variation on this, it only
     tells you that the thread responsible for heartbeating to Systemd
