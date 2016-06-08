@@ -7,10 +7,10 @@
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Site Title"
+title                    : "That Cluster Guy"
 title_separator          : "-"
-name                     : "Your Name"
-description              : "An amazing website."
+name                     : "Andrew Beekhof"
+description              : "A website."
 url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 gh_repo                  :
@@ -37,7 +37,7 @@ yandex_site_verification :
 
 # Social Sharing
 twitter:
-  username               :
+  username               : beekhof
 facebook:
   username               :
   app_id                 :
@@ -63,11 +63,11 @@ google_ad_slot           :
 
 # Site Author
 author:
-  name             : "Your Name"
-  avatar           : "bio-photo.jpg"
-  bio              : "I am an amazing person."
-  location         : "Somewhere"
-  email            :
+  name             : "Andrew Beekhof"
+  avatar           : "andrew-photo.png"
+  bio              : "Cluster guy to the rich and famous."
+  location         : "Melbourne"
+  email            : andrew@beekhof.net
   uri              :
   bitbucket        :
   codepen          :
@@ -75,18 +75,18 @@ author:
   flickr           :
   facebook         :
   foursquare       :
-  github           :
+  github           : beekhof
   google_plus      :
   keybase          :
   instagram        :
   lastfm           :
-  linkedin         :
+  linkedin         : beekhof
   pinterest        :
   soundcloud       :
   stackoverflow    : # http://stackoverflow.com/users/123456/username
   steam            :
   tumblr           :
-  twitter          :
+  twitter          : beekhof
   vine             :
   weibo            :
   xing             :
@@ -148,7 +148,7 @@ kramdown:
 
 
 # Outputting
-permalink: /:categories/:title/
+permalink: /blog/:year/:title #/:categories/:title/
 paginate: 5 # amount of posts to show
 paginate_path: /page:num/
 timezone: # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
