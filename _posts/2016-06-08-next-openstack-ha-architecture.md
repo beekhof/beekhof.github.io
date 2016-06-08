@@ -68,14 +68,14 @@ hardware and network metrics.
 
 Pacemaker's native ability to monitor services is more flexible than
 Systemd's which relies on a "PID up == service healthy" mode of
-thinking[2].
+thinking (1).
 
 However, just as Systemd is the entity performing the startup and
 shutdown of most OpenStack services, it is also the one performing the
 actual service health checks.
 
 To actually take advantage of Pacemaker's monitoring capabilities, you
-would need to write Open Cluster Framework (OCF) agents[3] for every
+would need to write Open Cluster Framework (OCF) agents (2) for every
 OpenStack service. While this would not take a rocket scientist to
 achieve, it is an opportunity for the way services are started in a
 clustered and non-clustered environment to diverge.
@@ -105,17 +105,11 @@ without a cluster manager.
 
 
 
-[1] As someone who's been playing in this space for some years now, I
-    feel qualified to state that orchestration is a hard problem.  The
-    ability to use it without requiring it could be quite useful as
-    container managers begin to grow this capability.
-
-[2] Watchdog-like functionality is only a variation on this, it only
+1. Watchdog-like functionality is only a variation on this, it only
     tells you that the thread responsible for heartbeating to Systemd
     is alive and well - not if the APIs it exposes are functioning.
 
-[3] Think SYS-V init scripts with some extra capabilities and
+2. Think SYS-V init scripts with some extra capabilities and
     requirements particular to clustered/automated environment.  It's
     a standard historically supported by the Linux Foundation but
     hasn't caught on much since it was created in the late 90's.
-    
