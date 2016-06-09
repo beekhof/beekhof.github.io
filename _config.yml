@@ -67,7 +67,7 @@ author:
   name             : "Andrew Beekhof"
   avatar           : "andrew-bio.png"
   bio              : "Cluster guy to the rich and famous."
-  location         : "Melbourne"
+  location         : "Melbourne, Australia"
   email            : andrew@beekhof.net
   uri              :
   bitbucket        :
@@ -160,6 +160,9 @@ defaults:
       comments: true
       share: true
       related: true
+      header:
+        overlay_image: blue-yellow-banner-thin.jpg
+        caption: "Photo credit: [WeGraphics](http://wegraphics.net/downloads/free-ultimate-blurred-background-pack/)"
   # _pages
   - scope:
       path: ""
@@ -167,6 +170,9 @@ defaults:
     values:
       layout: single
       author_profile: true
+      header:
+        image: yellow-banner-thin.png
+        caption: "Photo credit: [WeGraphics](http://wegraphics.net/downloads/free-ultimate-blurred-background-pack/)"
   # _docs
   - scope:
       path: ""

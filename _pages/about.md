@@ -4,6 +4,7 @@ title: About
 permalink: /about/
 header:
   image: beach-banner.png
+  caption: "Photo credit: Andrew Beekhof (2013)"
 ---
 
 {% include base_path %}
