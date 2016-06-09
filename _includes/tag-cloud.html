@@ -1,0 +1,8 @@
+{% include base_path %}
+
+<div id="tag-cloud">
+  <h4>Tag Cloud</h4>
+{% for category in site.tags %}
+  <a href="/tags#{{ category | first | slugify }}" style="font-size: {{ category | last | size | times: 100 | divided_by: site.tags.size  | plus: 50 }}%"> {{ category | first }}</a>
+{% endfor %}
+</div>

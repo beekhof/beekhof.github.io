@@ -163,6 +163,8 @@ defaults:
       header:
         overlay_image: blue-yellow-banner-thin.jpg
         caption: "Photo credit: [WeGraphics](http://wegraphics.net/downloads/free-ultimate-blurred-background-pack/)"
+      sidebar:
+        tagcloud: true
   # _pages
   - scope:
       path: ""
@@ -185,7 +187,6 @@ defaults:
       comments: false
       sidebar:
         nav: "docs"
-
 
 # Outputting
 permalink: /blog/:year/:title #/:categories/:title/
@@ -231,6 +232,7 @@ tag_archive:
 # jekyll-archives:
 #   enabled:
 #     - categories
+#     - year
 #     - tags
 #   layouts:
 #     category: archive-taxonomy
@@ -238,7 +240,6 @@ tag_archive:
 #   permalinks:
 #     category: /categories/:name/
 #     tag: /tags/:name/
-
 
 # HTML Compression
 # - http://jch.penibelst.de/
