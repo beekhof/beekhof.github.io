@@ -75,6 +75,9 @@ To get these two nodes talking to each other again:
 
 1. stop the cluster on both nodes
 1. on both nodes, run:
-       CIB_file=/path/to/cib.xml cibadmin -M -X '<cib crm_feature_set="3.0.7"/>'
+   
+   ```
+       CIB_file=/path/to/cib.xml cibadmin -M -X '<cib crm_feature_set="3.0.7" />'
+   ```
 1. start node1 and wait until it is elected as the DC
 1. start node2
