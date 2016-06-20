@@ -12,6 +12,9 @@ title_separator          : "-"
 name                     : "Andrew Beekhof"
 description              : "A thing I do."
 url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+feed:
+  path: feed.xml
+  path: atom.xml
 baseurl                  : # the subpath of your site, e.g. "/blog"
 gh_repo                  :
 teaser                   : # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
@@ -175,7 +178,7 @@ defaults:
       header:
         image: yellow-banner-thin.png
         caption: "Photo credit: [WeGraphics](http://wegraphics.net/downloads/free-ultimate-blurred-background-pack/)"
-  # _docs
+  # _Docs
   - scope:
       path: ""
       type: docs
