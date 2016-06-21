@@ -57,7 +57,8 @@ nova keypair-add myKey --pub-key ~/.ssh/id_rsa.pub
 ```
 
 Now you can tell your provisioning tool to add it to the instances it
-creates.  For `Heat`, the template would look like this:
+creates.  For [Heat](https://wiki.openstack.org/wiki/Heat), the
+template would look like this:
 
 ```
 myInstance:
@@ -100,8 +101,8 @@ to customize your images, start services and generally work-around
 bugs in officially provided images.
 
 The list of commands to run is specified as part of the `user_data`
-section of a Heat template or can be passed to `nova boot` with the
-`--user-data` option:
+section of a [Heat](https://wiki.openstack.org/wiki/Heat) template or
+can be passed to `nova boot` with the `--user-data` option:
 
 ```
 myNode:
@@ -130,10 +131,10 @@ If we have scripts that take a really long time, we may want to delay
 the creation of subsequent resources until our instance is fully
 configured.
 
-If we are using Heat, we can set this up by creating SwiftSignal and
-SwiftSignalHandle resources to coordinate resource creation with
-notifications/signals that could be coming from sources external or
-internal to the stack.
+If we are using [Heat](https://wiki.openstack.org/wiki/Heat), we can
+set this up by creating SwiftSignal and SwiftSignalHandle resources to
+coordinate resource creation with notifications/signals that could be
+coming from sources external or internal to the stack.
 
 ```
 signal_handle:
