@@ -9,6 +9,9 @@ header:
 
 {% include base_path %}
 
-Nearly a decade after starting [Pacemaker](http://clusterlabs.org) at
-SUSE, Andrew is currently based in Melbourne, still working on it and
-other cluster-related projects for [Red Hat](http://redhat.com)
+Andrew is best known for his work on
+[Pacemaker](http://clusterlabs.org) which he created in Munich while
+working for SuSE.  Since then he as moved back to Melbourne and is
+currently employed by [Red Hat](http://redhat.com) as a Principal
+Software Engineer, consulting on Pacemaker and creating architectures
+to meet high availability requirements.
