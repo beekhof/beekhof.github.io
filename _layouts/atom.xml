@@ -1,3 +1,7 @@
+---
+# Duplicate of the Jekyll-feed feed.xml layout
+# Used to create a second copy for the old /atom.xml url 
+---
 <?xml version="1.0" encoding="utf-8"?>
 <?xml-stylesheet type="text/xml" href="{{ url_base }}/feed.xslt.xml"?>
 {% if site.url %}
