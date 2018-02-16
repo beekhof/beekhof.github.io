@@ -1,12 +1,12 @@
 ---
 date: 2018-02-16 10:52
 title: Two Nodes - The Devil is in the Details
-excerpt: Many people love 2-nodes because they seem conceptually simpler and 33% cheaper, but most will have subtle failure modes
+excerpt: Many people love 2-node clusters because they seem conceptually simpler and 33% cheaper, but most will have subtle failure modes
 tags:
 - high availability
 ---
 
-_tl;dr - Many people love 2-nodes because they seem conceptually simpler and 33%
+_tl;dr - Many people love 2-node clusters because they seem conceptually simpler and 33%
 cheaper, but while it's possible to construct good ones, most will have subtle
 failure modes_
 
