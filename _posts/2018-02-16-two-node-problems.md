@@ -132,7 +132,7 @@ other node. Unplugging one end (who's likelihood is surely proportional to the
 distance between the nodes) would be enough to invalidate any assumption that
 link health equals peer node health.
 
-## What Can Be Done?
+## Making Two Nodes Work
 
 Sometimes the client can't or wont make the additional purchase of a third
 node and we need to look for alternatives.
