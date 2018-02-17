@@ -251,7 +251,7 @@ find a way to reliably power fence an entire datacenter.
 
 ###### Footnotes
 
- <a name="fnote1"></a>[1] Not everyone needs redundant power companies with independent transmission
-lines.  Although for at least one customer that did, their paranoia paid off when their
-monitoring detected one power company's transformer was failing.  The customer
+<a name="fnote1"></a>[1] Not everyone needs redundant power companies with
+independent transmission lines.  Although the paranoia paid off for at least
+one customer when their monitoring detected a failing transformer.  The customer
 was on the phone trying to warn the power company when it finally blew.
