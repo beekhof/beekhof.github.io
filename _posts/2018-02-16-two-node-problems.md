@@ -25,7 +25,7 @@ the system can move services to the surviving node after a failure, in
 general, it needs to be sure that they are not still active elsewhere.
 
 So not only are we looking for SPoFs, but we are also looking to balance risks
-and consequences and the calculus will be different for every deployment [1](#fnote1)
+and consequences and the calculus will be different for every deployment [[1]](#fnote1)
 
 There is no downside if a failure causes both members of a two node cluster to
 serve up the same static website. However its a very different story if it
