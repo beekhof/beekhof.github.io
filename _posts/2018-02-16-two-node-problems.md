@@ -29,7 +29,7 @@ and consequences and the calculus will be different for every deployment [[1]](#
 
 There is no downside if a failure causes both members of a two node cluster to
 serve up the same static website. However its a very different story if it
-results in **both sides are independently managing a shared job queue or
+results in **both sides independently managing a shared job queue or
 providing uncoordinated write access to a replicated database or shared
 filesystem.**
 
