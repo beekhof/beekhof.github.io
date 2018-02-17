@@ -252,6 +252,6 @@ find a way to reliably power fence an entire datacenter.
 ###### Footnotes
 
  <a name="fnote1"></a>[1] Not everyone needs redundant power companies with independent transmission
-lines.  Which is a true story,  _and_ their paranoia paid off when their
+lines.  Although for at least one customer that did, their paranoia paid off when their
 monitoring detected one power company's transformer was failing.  The customer
 was on the phone trying to warn the power company when it finally blew.
