@@ -17,7 +17,7 @@ this class of applications to be managed natively by Kubernetes.
 
 There is plenty to read on [why](https://github.com/beekhof/rss-operator/doc/Rationale.md)
 the operator exists, [how](https://github.com/beekhof/rss-operator/doc/design/replication.md)
-replication is managed and the steps to [install it](https://github.com/beekhof/rss-operator//doc/user/install_guide.md))
+replication is managed and the steps to [install it](https://github.com/beekhof/rss-operator//doc/user/install_guide.md)
 if you're interested in trying it out.
 
 There is also a screencast that demonstrates the major concepts:
