@@ -15,7 +15,7 @@ tags:
 
 Fundamentally fencing is a mechanism for turning a question 
 
-> Is node X capable of causing corruption?
+> Is node X capable of causing corruption or divergent datasets?
 
 into an answer
 
