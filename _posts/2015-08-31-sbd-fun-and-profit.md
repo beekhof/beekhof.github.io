@@ -28,7 +28,7 @@ is in fact off.
 
 Sometimes it will do this by powering the node off, clearly a dead
 node can do no harm.  Other times we will use a combination of network
-(stop new work from arriving) and disk (stop a rogue process from
+(stop traffic from arriving) and disk (stop a rogue process from
 writing anything to shared storage) fencing.
 
 Fencing is a requirement of _almost any_ cluster, regardless of
