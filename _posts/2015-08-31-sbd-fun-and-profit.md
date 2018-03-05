@@ -37,7 +37,7 @@ whether it is active/active, active/passive or involves shared storage
 
 One of the best ways of implementing fencing is with a remotely
 accessible power switch, however some environments may not allow them,
-see the value in them, or have ones that are suitable for clustering
+see the value in them, or have ones that are not suitable for clustering
 (such as IPMI devices that loose power with the host they control).
 
 ## Enter SBD 
