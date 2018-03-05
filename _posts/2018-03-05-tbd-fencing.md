@@ -13,19 +13,16 @@ tags:
 - openstack
 ---
 
+## Protecting Database Centric Applications
 
 In the same way that some application require the ability to persist records
 to disk, for some applications the loss of access to the database means game
 over.
 
-Cinder-volume is one such application and while discussing various options for
-preventing SPoFs, I landed on the idea of using the database itself as a
-mechanism to ensure consistent access.
-
-As cinder-volume moves towards an active/active model, it is important that a
-failure in one peer does not represent a SPoF.  In the Cinder architecture,
-the API server has no way to know if the cinder-volume process is fully
-functional.
+Cinder-volume is one such application and as it moves towards an active/active
+model, it is important that a failure in one peer does not represent a SPoF.
+In the Cinder architecture, the API server has no way to know if the cinder-
+volume process is fully functional.
 
 A cinder-volume process that has lost access to the database will still
 receive requests from the API server and act on them, however it will not be
@@ -44,29 +41,44 @@ is just as crucial that any locks held by a faulty or hung peer can be
 recovered within a finite period of time.  Hence the need for fencing.
 
 Since power-based fencing is so dependant on node hardware and there is always
-some kind of storage involved, we explored the idea of leveraging the SBD[[1]](#fnote1)
-(Storage Based Death) project's capabilities to do disk based heartbeating and
-poison-pills.  When combined with a hardware watchdog, it is an extremely
-reliable way to ensure safe access to shared resources.
+some kind of storage involved, we explored the idea of leveraging the
+SBD[[1]](#fnote1) ( [Storage Based Death](/blog/2015/sbd-fun-and-profit) )
+project's capabilities to do disk based heartbeating and poison-pills.  When
+combined with a hardware watchdog, it is an extremely reliable way to ensure
+safe access to shared resources.
 
 However in Cinder's case, not all vendors can provide raw access to a small
 block device on the storage.  Additionally, it is really access to the
 database that needs protecting not the storage.  So while useful, it is still
-possible to construct scenarios that would defeat SBD.
+relatively easy to construct scenarios that would defeat SBD.
 
-Enter TBD, ("Table Based Death", or "To Be Decided" depending on your
-preference).  Instead of heartbeating to a designated slot on a block device,
-the slots become rows in a small table in the database.  Preferrably one in a
-different namespace and with different access permissions.
+## A New Type of Death
 
-The desired behaviour is derived from the following properties:
+Where SBD uses storage APIs to protect applications persisting data to disk,
+we could also have one based on SQL calls that did the same for Cinder-volume
+and other database centric applications.
+
+I therefor propose TBD - "Table Based Death" (or "To Be Decided" depending on
+how you're wired).
+
+Instead of heartbeating to a designated slot on a block device, the slots
+become rows in a small table in the database that this new daemon would
+interact with via SQL.
+
+When a peer is connected to the database, a cluster manager like Pacemaker can
+use a poison pill to fence the peer in the event of a network, node, or
+resource level failure.  Should the peer ever loose quorum or its connection
+to the database, surviving peers can assume with a degree of confidence that
+it will self terminate via the watchdog after a known interval.
+
+The desired behaviour can be derived from the following properties:
 
 1. Quorum is required to write poison pills into a peer's slot
 
 2. A peer that finds a poison pill in its slot triggers its watchdog and reboots
 
 3. A peer that looses connection to the database won't be able to write status
-   information[[2]](#fnote2) to its slot which will trigger the watchdog
+   information to its slot which will trigger the watchdog
 
 4. A peer that looses connection to the database won't be able to write a poison
    pill into another peer's slot
@@ -81,16 +93,36 @@ The desired behaviour is derived from the following properties:
 
 If `N` seconds is the worst case time a peer would need to either notice a
 poison pill, or disconnection from the database, and trigger the watchdog.
-Then we can arrange for the cluster to recover services after some multiple of
-`N` has elasped in the same way that Pacemaker does for SBD.
+Then we can arrange for services to be recovered after some multiple of `N`
+has elasped in the same way that Pacemaker does for SBD.
+
+While TBD would be a valuable addition to a traditional cluster architecture,
+it is also concievable that it could be useful in a stand-alone configuration.
+Consideration should therefor be given during the design phase as to how best
+consume membership, quorum, and fencing requests from multiple sources - not
+just a particular application or cluster manager.
+
+## Limitations
+
+Just as in the SBD architecture, we need TBD to be configured to use the same
+persistent store (database) as is being consumed by the applications it is
+protecting.  This is crucial as it means the same criteria that enables the
+application to function, also results in the node self-terminating if it cannot
+be satisfied.
+
+However for security reasons, the table would ideally live in a different
+namespace and with different access permissions.
+
+It is also important to note that significant design challenges would need to
+be faced in order to protect applications managed by the same cluster that was
+providing the highly available database being consumed by TBD.  Consideration
+would particularly need to be given to the behaviour of TBD and the
+applications it was protecting during shudown and cold-start scenarios.  Care
+would need to be taken in order to avoid unnecessary self-fencing operations
+and that failure responses are not impacted by correctly handling these
+scenarios.
 
 ## Footnotes
 
 <a name="fnote1">[1]</a> SBD lives under the ClusterLabs banner but can
 operate without a traditional corosync/pacemaker stack.
-
-<a name="fnote2">[2]</a> By requiring that peers periodically write their
-status to a slot in the table, we are effectively creating a side-channel
-heartbeat mechanism that can either allow the cluster to make better
-assumptions, or allow TBD to initiate fencing without the co-operation of a
-traditional cluster stack.
