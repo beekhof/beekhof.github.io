@@ -3,7 +3,7 @@
 date: 2018-03-05 13:11
 title: A New Fencing Mechanism for Pacemaker (TBD)
 published: false
-excerpt: For some applications the loss of a database connection means game over.
+excerpt: Protecting database centric applications in the absense of power fencing
 category:
 tags: 
 - cluster
