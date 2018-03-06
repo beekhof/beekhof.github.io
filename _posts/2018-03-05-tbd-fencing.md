@@ -41,10 +41,10 @@ is just as crucial that any locks held by a faulty or hung peer can be
 recovered within a finite period of time.  Hence the need for fencing.
 
 Since power-based fencing is so dependant on node hardware and there is always
-some kind of storage involved, we explored the idea of leveraging the
+some kind of storage involved, the idea of leveraging the
 SBD[[1]](#fnote1) ( [Storage Based Death](/blog/2015/sbd-fun-and-profit) )
-project's capabilities to do disk based heartbeating and poison-pills.  When
-combined with a hardware watchdog, it is an extremely reliable way to ensure
+project's capabilities to do disk based heartbeating and poison-pills is attractive.
+When combined with a hardware watchdog, it is an extremely reliable way to ensure
 safe access to shared resources.
 
 However in Cinder's case, not all vendors can provide raw access to a small
