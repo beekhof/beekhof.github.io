@@ -17,35 +17,40 @@ tags:
 
 In the same way that some application require the ability to persist records
 to disk, for some applications the loss of access to the database means game
-over.
+over - more so than disconnection from the storage.
 
 Cinder-volume is one such application and as it moves towards an active/active
 model, it is important that a failure in one peer does not represent a SPoF.
 In the Cinder architecture, the API server has no way to know if the cinder-
-volume process is fully functional.
+volume process is fully functional - so they will still recieve new requests
+to execute.
 
-A cinder-volume process that has lost access to the database will still
-receive requests from the API server and act on them, however it will not be
-able to record the action's success or failure in the database.  For some
-operations this is ok, if wasteful, because the operation will fail and be
-retried. Deletion of something that was already deleted  is usually treated as
-successful and re-attempted creation operationss will return a new volume,
-however performing the same resize operation twice is problematic. 
+A cinder-volume process that has lost access to the storage will naturally be
+unable to complete requests.  Worse though is loosing access to the database,
+as this will means the result of an action cannot be recorded.
+
+For some operations this is ok, if wasteful, because the operation will fail
+and be retried. Deletion of something that was already deleted is usually
+treated as a success and re-attempted operations for creating volume will
+return a new volume. However performing the same resize operation twice is
+highly problematic since the recorded old size no longer matches the actual
+size.
 
 Even the safe operations may never complete because the bad cinder-volume
-process may end up getting the cleanup operations from its own failures, which
-would result in additional failures.
+process may end up being asked to perform the cleanup operations from its own
+failures, which would result in additional failures.
 
-Additionally, some Cinder drivers make use of locking.  For those drivers it
-is just as crucial that any locks held by a faulty or hung peer can be
-recovered within a finite period of time.  Hence the need for fencing.
+Additionally, despite not being recommended, some Cinder drivers make use of
+locking.  For those drivers it is just as crucial that any locks held by a
+faulty or hung peer can be recovered within a finite period of time.  Hence
+the need for fencing.
 
 Since power-based fencing is so dependant on node hardware and there is always
-some kind of storage involved, the idea of leveraging the
-SBD[[1]](#fnote1) ( [Storage Based Death](/blog/2015/sbd-fun-and-profit) )
-project's capabilities to do disk based heartbeating and poison-pills is attractive.
-When combined with a hardware watchdog, it is an extremely reliable way to ensure
-safe access to shared resources.
+some kind of storage involved, the idea of leveraging the SBD[[1]](#fnote1) (
+[Storage Based Death](/blog/2015/sbd-fun-and-profit) ) project's capabilities
+to do disk based heartbeating and poison-pills is attractive. When combined
+with a hardware watchdog, it is an extremely reliable way to ensure safe
+access to shared resources.
 
 However in Cinder's case, not all vendors can provide raw access to a small
 block device on the storage.  Additionally, it is really access to the
@@ -80,15 +85,15 @@ The desired behaviour can be derived from the following properties:
 3. A peer that looses connection to the database won't be able to write status
    information to its slot which will trigger the watchdog
 
-4. A peer that looses connection to the database won't be able to write a poison
-   pill into another peer's slot
+4. A peer that looses connection to the database won't be able to write a 
+   poison pill into another peer's slot
 
 5. If the underlying database looses too many peers and reverts to read-only,
    we won't be able to write to our slot which triggers the watchdog
 
-6. When a peer that looses connection to its peers, the survivors would maintain
-   quorum(1) and write a poison pill to the lost node (1) ensuring the peer will
-   terminate due to scenario (2) or (3)
+6. When a peer that looses connection to its peers, the survivors would 
+   maintain quorum(1) and write a poison pill to the lost node (1) ensuring
+   the peer will terminate due to scenario (2) or (3)
 
 
 If `N` seconds is the worst case time a peer would need to either notice a
@@ -107,8 +112,8 @@ just a particular application or cluster manager.
 Just as in the SBD architecture, we need TBD to be configured to use the same
 persistent store (database) as is being consumed by the applications it is
 protecting.  This is crucial as it means the same criteria that enables the
-application to function, also results in the node self-terminating if it cannot
-be satisfied.
+application to function, also results in the node self-terminating if it
+cannot be satisfied.
 
 However for security reasons, the table would ideally live in a different
 namespace and with different access permissions.
