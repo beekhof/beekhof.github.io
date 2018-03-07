@@ -1,8 +1,8 @@
 ---
 
-date: 2018-03-05 13:11
-title: A New Fencing Mechanism for Pacemaker (TBD)
-published: false
+date: 2018-03-07 13:11
+title: A New Fencing Mechanism (TBD)
+published: true
 excerpt: Protecting database centric applications in the absense of power fencing
 category:
 tags: 
