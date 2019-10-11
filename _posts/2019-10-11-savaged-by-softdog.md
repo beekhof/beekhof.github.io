@@ -1,7 +1,7 @@
 ---
 date: 2019-10-11 13:55
 title: Savaged by Softdog, a Cautionary Tale
-excerpt: Hardware is imperfect, and software contains bugs. Don't use software based watchdogs for the latter.
+excerpt: Hardware is imperfect, and software contains bugs. Don't use software based watchdogs and expect to survive the latter.
 published: false
 tags:
 - high availability
@@ -22,9 +22,9 @@ When done right, watchdogs can allow survivors to safely assume that missing nod
 
 However when relying on indirect fencing mechanisms, it is important to recognise that in the absence of out-of-band communication such as disk based heartbeats, surviving peers have absolutely no ability to validate that the lost node ever reaches a safe state, surviving peers are making an *assumption* when they start recovery.   There is a risk it didn’t happen as planned and the cost of getting it wrong is data corruption and/or loss.
 
-Nothing is without risk.  With an infinite budget, one could buy all of Amazon, plus Apple and Google for redundancy, to host a static website - and still be undone by an asteroid.  The goal of HA is to reduce risk to an acceptable level.  What constitutes an acceptable risk varies person-to-person, project-to-project, and company-to-company, however as a community we encourage people to start by eliminating [single points of failure (SPoF)](https://en.wikipedia.org/wiki/Single_point_of_failure).
+Nothing is without risk though.  Someone with an overdeveloped sense of paranoia and an infinite budget could buy all of Amazon, plus Apple and Google for redundancy, to host a static website - and still be undone by an asteroid.  The goal of HA is not to eliminate risk, but reduce it to an acceptable level.  What constitutes an acceptable risk varies person-to-person, project-to-project, and company-to-company, however as a community we encourage people to start by eliminating [single points of failure (SPoF)](https://en.wikipedia.org/wiki/Single_point_of_failure).
 
-In the absence of direct fencing mechanisms, we like hardware based watchdogs because as a self-contained device, they avoid the host OS being a single point of failure because they can panic the machine without involvement from the OS.  If the watchdog fails, the node is in a safe state, and data loss can only occur through failure of additional nodes.  In the event of a power outage, they also loose power but the node is already safe. A network failure is no longer a SPoF and would require a software bug (incorrect quorum calculations for example) in order to present a problem.  Kernel panics, userspace hangs, and resource starvation issues all prevent the watchdog from being tickled and result in machine death.
+In the absence of direct fencing mechanisms, we like hardware based watchdogs because as a self-contained device they can panic the machine without involvement from the host OS.  If the watchdog fails, the node is in a safe state, and data loss can only occur through failure of additional nodes.  In the event of a power outage, they also loose power but the node is already safe. A network failure is no longer a SPoF and would require a software bug (incorrect quorum calculations for example) in order to present a problem.  Kernel panics, userspace hangs, and resource starvation issues all prevent the watchdog from being tickled and result in machine death.
 
 Its this last class of failures that concern HA and kernel experts whenever Softdog is put forward in situations where already purchased cluster machines lack both power management and watchdog hardware.
 
