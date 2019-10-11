@@ -40,12 +40,14 @@ For example, this piece of code, when executed inside the kernel on the 
 same CPU as the watchdog timer, would prevent the software watchdog from 
 firing.
 
+````
         unsigned long long i;
         local_irq_disable();
         for (i = 0; i < 100000000000ULL; i++) {
                 asm volatile ("nop");
         }
         local_irq_enable();
+````
 
 There are many similar examples like this and the software watchdog can't 
 do anything about them. 
