@@ -30,12 +30,7 @@ Its this last class of failures that concern HA and kernel experts whenever Soft
 
 If the kernel encounters a bug and corrupts its structures, there's no guarantee that the software watchdog will be called. 
 
-> If the user is serious about reliability, he should get a hardware watchdog.
-> - Mikulas Patocka (Red Hat kernel engineer)
-
-For example, this piece of code, when executed inside the kernel on the 
-same CPU as the watchdog timer, would prevent the software watchdog from 
-firing.
+For example, this piece of code, when executed inside the kernel on the same CPU as the watchdog timer, would prevent the software watchdog from firing.
 
 ````
         unsigned long long i;
