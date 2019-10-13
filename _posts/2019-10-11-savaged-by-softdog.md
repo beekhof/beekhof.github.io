@@ -10,7 +10,9 @@ tags:
 
 Hardware is imperfect, and software contains bugs. When node level failures occur, the work required from the cluster does not decrease - affected workloads need to be restarted, putting additional stress on surviving peers and making it important to recover the lost capacity.
 
-Additionally, some workloads may require at-most-one semantics.  Failures affecting these kind of workloads risk data loss and/or corruption if "lost" nodes remain at least partially functional.  For this reason we need to know that the node has reached a safe state before initiating recovery of the workload.  The process of putting the node into a safe state is called fencing.
+Additionally, some of workloads may require at-most-one semantics.  Failures affecting these kind of workloads risk data loss and/or corruption if "lost" nodes remain at least partially functional.  For this reason we need to know that the node has reached a safe state before initiating recovery of the workload.  
+
+The process of putting the node into a safe state is called fencing, and we prefer power based methods because they provide the best chance of also recovering capcity without human involvement.
 
 There are two categories of fencing which I will call _direct_ and _indirect_ but could equally be called _active_ and _passive_.
 
