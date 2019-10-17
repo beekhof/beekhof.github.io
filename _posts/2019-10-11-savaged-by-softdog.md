@@ -34,24 +34,17 @@ There is one last class of failures, software bugs, that are the primary concern
 
 Softdog malfunctions originating in software can take two forms - resetting a machine when it should not have (false positive), and not resetting a machine when it should have (false negative). False positives will reduce overall availability due to repeated failovers, but the integrity of the system and its data will remain intact.
 
-More concerning is the possibility for a single software bug to both cause a node to become unavailable and prevent softdog from recovering the system.   One contrived example is this piece of code which, when executed inside the kernel on the same CPU as the watchdog timer, would prevent the software watchdog from firing by starving the it of the CPU.
+More concerning is the possibility for a single software bug to both cause a node to become unavailable and prevent softdog from recovering the system.   One contrived example is 
 
-```c
-        unsigned long long i;
-        local_irq_disable();
-        for (i = 0; i < 100000000000ULL; i++) {
-                asm volatile ("nop");
-        }
-        local_irq_enable();
-```
+[insert bus]
 
-There are many similar examples like this and the software watchdog can't do anything about them. Likewise if the kernel encounters a bug and corrupts its structures, there's no guarantee that the software watchdog will be called.  [XXXXX insert link to an example RHBZ XXXXX] 
+There are many similar examples like this and the software watchdog can't do anything about them. Worse is if the kernel encounters a bug and corrupts its structures, such as seen in [rhbz#1334224](https://bugzilla.redhat.com/show_bug.cgi?id=1334224) there's no guarantee that the software watchdog will be able to reboot the machine.  
 
 > If the customer needs guaranteed reboot, they should install a hardware watchdog.
 >
 >   &mdash; Mikulas Patocka (Red Hat kernel engineer)
 
-The greatest danger of softdog is that most of the time it appears to work.  For months or years it will reboot your machines in response to network and software outages, only to fail you when just the wrong conditions are met.  
+The greatest danger of softdog is that most of the time it appears to work just fine.  For months or years it will reboot your machines in response to network and software outages, only to fail you when just the wrong conditions are met.  
 
 Imagine some approximation of the above loop existing in an obscure corner of a device driver, or your codebase.  Rarely triggered, but one day you get unlucky and the loop is triggered and lands on the same CPU as softdog.
 
