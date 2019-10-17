@@ -2,7 +2,7 @@
 date: 2019-10-11 13:55
 title: Savaged by Softdog, a Cautionary Tale
 excerpt: Hardware is imperfect, and software contains bugs. Don't use software based watchdogs and expect to survive the latter.
-published: false
+published: true
 tags:
 - high availability
 - watchdog
