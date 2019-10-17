@@ -32,7 +32,7 @@ There is one last class of failures, software bugs, that are the primary concern
 
 Softdog malfunctions originating in software can take two forms - resetting a machine when it should not have (false positive), and not resetting a machine when it should have (false negative). False positives will reduce overall availability due to repeated failovers, but the integrity of the system and its data will remain intact.
 
-More concerning is the possibility for a single software bug to both cause a node to become unavailable and prevent softdog from recovering the system.   One contrived example is this piece of code which, when executed inside the kernel on the same CPU as the watchdog timer, would prevent the software watchdog from firing by staving the it of the CPU.
+More concerning is the possibility for a single software bug to both cause a node to become unavailable and prevent softdog from recovering the system.   One contrived example is this piece of code which, when executed inside the kernel on the same CPU as the watchdog timer, would prevent the software watchdog from firing by starving the it of the CPU.
 
 ```c
         unsigned long long i;
