@@ -18,7 +18,7 @@ The process of putting the node into a safe state is called fencing, and we pre
 
 There are two categories of fencing which I will call _direct_ and _indirect_ but could equally be called _active_ and _passive_.
 
-Direct methods involve action on the part of surviving peers, such interacting with an IPMI or iLO device, whereas indirect methods rely on the failed node to somehow recognise it is in an unhealthy state take steps to enter a safe state on its own.  
+Direct methods involve action on the part of surviving peers, such interacting with an IPMI or iLO device, whereas indirect methods rely on the failed node to somehow recognise it is in an unhealthy state *and* take steps to enter a safe state on its own.  
 
 The most common form of indirect fencing is the use of a [watchdog](https://en.wikipedia.org/wiki/Watchdog_timer). The watchdog's timer is reset every N seconds unless quorum is lost or the part of the software stack fails.  If the timer (usually some multiple of N) expires, then the the watchdog will panic (not shutdown) the machine. 
 
