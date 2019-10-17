@@ -6,6 +6,8 @@ published: false
 tags:
 - high availability
 - watchdog
+- softdog
+- bad practices
 ---
 
 Hardware is imperfect, and software contains bugs. When node level failures occur, the work required from the cluster does not decrease - affected workloads need to be restarted, putting additional stress on surviving peers and making it important to recover the lost capacity.
