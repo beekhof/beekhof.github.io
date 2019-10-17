@@ -46,7 +46,7 @@ Imagine a pointer error, the kind that corrupts the kernel's internal structures
 
 Just like all the other times it causes the machine to misbehave, but the surviving peers detect it, wait a minute or two, and then begin recovery.  Application services are started, volumes are mounted, database replicas are promoted to master, VIPs are brought up, and requests start being processed.  
 
-However unlike all the other times, the failed peer is still active because the softdog has been corrupted, and the application services remain responsive and nothing has removed VIPs or demoted masters.
+However unlike all the other times, the failed peer is still active because the softdog has been corrupted, the application services remain responsive and nothing has removed VIPs or demoted masters.
 
 At this point, your best case scenario is that database and storage replication is broken.  Requests from some clients will go to the failed node, and some will go to its replacement.  Both will succeed, volumes and databases will be updated independently of what happened on the other peer.  Reads will start to return stale or otherwise inaccurate data, and incorrect decisions will be made based on them.  No transactions will be lost, however the longer the split remains, the further the datasets will drift apart and the more work it will be to reconcile them by hand once the situation is discovered.
 
