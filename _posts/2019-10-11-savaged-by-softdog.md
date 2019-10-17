@@ -62,7 +62,7 @@ Things get worse if replication doesn’t break.  Now you have the prospect of u
 
 Depending on the timing and scope of the updates, you could get:
 
-- all whole file copies from the second writer and loose transactions,
+- only whole file copies from the second writer and loose transactions from the first,
 - whole file copies from a mixture of hosts, leading to a corrupted on-disk representation,
 - files which contain a mixture of bits from both hosts, also leading to a corrupted on-disk representation, or
 - all of the above. 
