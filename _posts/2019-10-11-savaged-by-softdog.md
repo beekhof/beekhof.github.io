@@ -34,23 +34,19 @@ There is one last class of failures, software bugs, that are the primary concern
 
 Softdog malfunctions originating in software can take two forms - resetting a machine when it should not have (false positive), and not resetting a machine when it should have (false negative). False positives will reduce overall availability due to repeated failovers, but the integrity of the system and its data will remain intact.
 
-More concerning is the possibility for a single software bug to both cause a node to become unavailable and prevent softdog from recovering the system.   One contrived example is 
-
-[insert bus]
-
-There are many similar examples like this and the software watchdog can't do anything about them. Worse is if the kernel encounters a bug and corrupts its structures, such as seen in [rhbz#1334224](https://bugzilla.redhat.com/show_bug.cgi?id=1334224) there's no guarantee that the software watchdog will be able to reboot the machine.  
+More concerning is the possibility for a single software bug to both cause a node to become unavailable and prevent softdog from recovering the system.   One possibility is a bug in a device or device driver, such as a tight loop, that causes the NMI bus to lock up.  In such a scenario the watchdog timer would expire, but the softdog would not be able to trigger a reboot.  Although it would not be possible to recover the cluster's capacity, fortunately the entire machine is in a state that prevents it from being able to recieve or act on client requests.
 
 > If the customer needs guaranteed reboot, they should install a hardware watchdog.
 >
 >   &mdash; Mikulas Patocka (Red Hat kernel engineer)
 
-The greatest danger of softdog is that most of the time it appears to work just fine.  For months or years it will reboot your machines in response to network and software outages, only to fail you when just the wrong conditions are met.  
+The greatest danger of softdog however, is that most of the time it appears to work just fine.  For months or years it will reboot your machines in response to network and software outages, only to fail you when just the wrong conditions are met.  
 
-Imagine some approximation of the above loop existing in an obscure corner of a device driver, or your codebase.  Rarely triggered, but one day you get unlucky and the loop is triggered and lands on the same CPU as softdog.
+Imagine a pointer error, the kind that corrupts the kernel's internal structures and causes kernel panics, such as seen in [rhbz#1334224](https://bugzilla.redhat.com/show_bug.cgi?id=1334224).  Rarely triggered, but one day you get unlucky and the area of memory that gets scribbled on includes the softdog.
 
-Just like all the other times it causes the cluster software to go wonky, but the surviving peers detect it, wait a minute or two, and then begin recovery.  Application services are started, volumes are mounted, database replicas are promoted to master, VIPs are brought up, and requests start being processed.  
+Just like all the other times it causes the machine to misbehave, but the surviving peers detect it, wait a minute or two, and then begin recovery.  Application services are started, volumes are mounted, database replicas are promoted to master, VIPs are brought up, and requests start being processed.  
 
-However unlike all the other times, the failed peer is still active.  The softdog CPU is stalled, but there are dozens of others keeping the application services responsive and nothing has removed VIPs or demoted masters.
+However unlike all the other times, the failed peer is still active.  The softdog is corrupted, but the application services remain responsive and nothing has removed VIPs or demoted masters.
 
 At this point, your best case scenario is that database and storage replication is broken.  Requests from some clients will go to the failed node, and some will go to its replacement.  Both will succeed, volumes and databases will be updated independently of what happened on the other peer.  Reads will start to return stale or otherwise inaccurate data, and incorrect decisions will be made based on them.  No transactions will be lost, however the longer the split remains, the further the datasets will drift apart and the more work it will be to reconcile them by hand once the situation is discovered.
 
