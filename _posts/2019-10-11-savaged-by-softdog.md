@@ -45,7 +45,7 @@ More concerning is the possibility for a single software bug to both cause a nod
 
 There are many similar examples like this and the software watchdog can't do anything about them. Likewise if the kernel encounters a bug and corrupts its structures, there's no guarantee that the software watchdog will be called.  [XXXXX insert link to an example RHBZ XXXXX] 
 
-> If the customer needs guaranteed reboot, he should  install a hardware watchdog.
+> If the customer needs guaranteed reboot, they should install a hardware watchdog.
 >
 >   &mdash; Mikulas Patocka (Red Hat kernel engineer)
 
