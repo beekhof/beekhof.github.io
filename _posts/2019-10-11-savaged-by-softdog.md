@@ -40,7 +40,7 @@ More concerning is the possibility for a single software bug to both cause a nod
 >
 >   &mdash; Mikulas Patocka (Red Hat kernel engineer)
 
-The greatest danger of softdog however, is that most of the time it appears to work just fine.  For months or years it will reboot your machines in response to network and software outages, only to fail you when just the wrong conditions are met.  
+The greatest danger of softdog, is that most of the time it appears to work just fine.  For months or years it will reboot your machines in response to network and software outages, only to fail you when just the wrong conditions are met.  
 
 Imagine a pointer error, the kind that corrupts the kernel's internal structures and [causes kernel panics](https://bugzilla.redhat.com/buglist.cgi?quicksearch=kernel%20pointer).  Rarely triggered, but one day you get unlucky and the area of memory that gets scribbled on includes the softdog.
 
