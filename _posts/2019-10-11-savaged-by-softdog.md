@@ -72,4 +72,4 @@ Ironically an admin’s first instinct, to restart the node or database and see 
 
 To mitigate this situation, you would either need *very* frequent backups, or add a SCSI based fencing mechanism to ensure exclusive access to shared storage, and a network based mechanism to prevent requests from reaching the failed peer.
 
-Or you could just use a hardware watchdog (or even better, a [network power switch](https://www.apc.com/shop/us/en/categories/power-distribution/rack-power-distribution/metered-rack-pdu/N-wj7jiz)).
+Or you could just use a hardware watchdog (even better, try a [network power switch](https://www.apc.com/shop/us/en/categories/power-distribution/rack-power-distribution/metered-rack-pdu/N-wj7jiz)).
