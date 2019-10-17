@@ -68,5 +68,8 @@ Depending on the timing and scope of the updates, you could get:
 - files which contain a mixture of bits from both hosts, also leading to a corrupted on-disk representation, or
 - all of the above. 
 
-Ironically an admin’s first instinct, to restart the node or database and see if that fixes the situation, is more likely to wipe out the only remaining consistent copy of their data (asuming the entire database fits in memory).  At which point all transactions since the previous backup are lost.
+Ironically an admin’s first instinct, to restart the node or database and see if that fixes the situation, might instead wipe out the only remaining consistent copy of their data (asuming the entire database fits in memory).  At which point all transactions since the previous backup are lost.
 
+To mitigate this situation, you would either need *very* frequent backups, or add a SCSI based fencing mechanism to ensure exclusive access to shared storage, and a network based mechanism to prevent requests from reaching the failed peer.
+
+Or you could just use a hardware watchdog (or even better, a [network power switch](https://www.apc.com/shop/us/en/categories/power-distribution/rack-power-distribution/basic-rack-pdu/N-4mrm97)).
