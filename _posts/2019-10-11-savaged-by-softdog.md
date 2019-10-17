@@ -42,7 +42,7 @@ More concerning is the possibility for a single software bug to both cause a nod
 
 The greatest danger of softdog however, is that most of the time it appears to work just fine.  For months or years it will reboot your machines in response to network and software outages, only to fail you when just the wrong conditions are met.  
 
-Imagine a pointer error, the kind that corrupts the kernel's internal structures and causes kernel panics, such as seen in [rhbz#1334224](https://bugzilla.redhat.com/show_bug.cgi?id=1334224).  Rarely triggered, but one day you get unlucky and the area of memory that gets scribbled on includes the softdog.
+Imagine a pointer error, the kind that corrupts the kernel's internal structures and [causes kernel panics](https://bugzilla.redhat.com/buglist.cgi?quicksearch=kernel%20pointer).  Rarely triggered, but one day you get unlucky and the area of memory that gets scribbled on includes the softdog.
 
 Just like all the other times it causes the machine to misbehave, but the surviving peers detect it, wait a minute or two, and then begin recovery.  Application services are started, volumes are mounted, database replicas are promoted to master, VIPs are brought up, and requests start being processed.  
 
