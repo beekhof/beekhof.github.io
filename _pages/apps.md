@@ -31,7 +31,7 @@ header:
     <tr>
       <td>
 	<div class="author__avatar">
-	  <img src="https://clusterlabs.org/pacemaker/doc/en-US/Pacemaker/2.0/html/Clusters_from_Scratch/Common_Content/images/title_logo.svg" class="author__avatar" alt="Pacemaker">
+	  <img src="http://www.beekhof.net/images/Pacemaker-logo.png" class="author__avatar" alt="Pacemaker">
 	</div>
       </td>
       <td>
