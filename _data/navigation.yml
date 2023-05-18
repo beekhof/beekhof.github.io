@@ -6,9 +6,6 @@ main:
   - title: "About"
     url: /about/
 
-  - title: "Apps"
-    url: /apps/
-
   - title: "By Year"
     url: /year-archive/
 
