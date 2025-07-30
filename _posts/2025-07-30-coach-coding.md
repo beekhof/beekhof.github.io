@@ -1,7 +1,7 @@
 ---
 date: 2025-07-30 10:28
 title: Building a Kubernetes Operator in a Day with AI
-excerpt: 
+excerpt: Vibe coding sounds like something you do after too many energy drinks, but after giving it a try, and despite its flaws, I cannot stop talking about the experience.
 published: true
 tags:
 - ai
