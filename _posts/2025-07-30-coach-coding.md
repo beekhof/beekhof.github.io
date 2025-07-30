@@ -8,7 +8,7 @@ tags:
 - best practices
 ---
 
-### **My Brain is Utterly Broken: How I Built a Kubernetes Operator in a Day with AI**
+# My Brain is Utterly Broken: How I Built a Kubernetes Operator in a Day with AI
 
 As someone that always took pride in my ability to rapidly implement features
 and generally solve problems in software, I was extremely skeptical of the "vibe
@@ -24,7 +24,7 @@ niche, idea to a functioning project far faster than I could have ever imagined.
 Honestly, my mind has been blown, the veil has been lifted, and I’m still trying
 to piece together what it all means.
 
-#### **The Idea That No One Had Time For**
+## The Idea That No One Had Time For
 
 It started, as many of these things do, with a real customer need. I had an idea
 for a new operator that would help our Virtualization customers using ODF:
@@ -38,7 +38,7 @@ did*)*.  Which made it the perfect test case: it was non-trivial, addressed a
 real-world problem, and wholesale plagiarism was off the table.  With no
 engineering capacity to do it properly, there was nothing to lose.
 
-#### **The "Vibe Coding" Experiment**
+## The "Vibe Coding" Experiment
 
 Inspired by a [LinkedIn
 course](https://www.linkedin.com/learning/structure-vibe-coding-to-save-build-time/tips-for-your-ai-vibe-coding-journey)
@@ -74,7 +74,7 @@ made my eyes bleed. But as a starting point created in just a few hours? It had
 no right to be this good. In one day, I had a design, tests, and a
 well-documented codebase.
 
-#### **The Real Magic: AI-Powered Iteration**
+## The Real Magic: AI-Powered Iteration
 
 While the initial code drop was impressive, the follow-up process was truly
 transformative. The bot iterates faster than I ever could.
@@ -94,7 +94,7 @@ While the steps were often imperfect, at the speed it iterated, the cumulative
 effect of even small improvements was hugely significant in short periods of
 time. Two weeks into the experiment I would consider it a reasonable beta.
 
-**Success Means Defining (and Defending\!) the Success Criteria**
+## Success Means Defining (and Defending\!) the Success Criteria
 
 While the bot can crank out code and iterate at a speed that's insane, the key
 to success is human oversight—someone actually making sure its output is solid.
@@ -122,7 +122,7 @@ order to make tests pass, and harder to spot in bulk changes.
 These actions, while entirely predictable, highlight the need for a human to be
 in control at all times.
 
-**A Better Name**
+## A Better Name
 
 The term "vibe coding" still makes me somewhat nauseous. It sounds like
 something you do after a few too many energy drinks, and reflects poorly on both
@@ -135,7 +135,7 @@ that human oversight. I’m starting to use the term "Coach Coding" instead, as 
 is a more accurate reflection of the collaborative, iterative, and ultimately
 human-driven nature of the process.
 
-#### **An Insanely Powerful Tool**
+## An Insanely Powerful Tool
 
 The bot is not perfect, but that’s not the point. In the hands of an experienced
 practitioner who can spot missteps and highlight areas for improvement, it is an
